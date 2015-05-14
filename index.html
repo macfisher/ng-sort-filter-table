@@ -27,6 +27,16 @@
     <p>Search Query: {{ searchWeapon }}</p>
   </div>
   
+  <form>
+	  <div class="form-group">
+		  <div class="input-group">
+			  <div class="input-group-addon"><i class="fa fa-search"></i></div>
+			  
+			  <input type="text" class="form-control" placeholder="Search a weapon" ng-model="searchWeapon">
+		  </div>
+	  </div>
+  </form>
+  
   <table class="table table-bordered table-striped">
     
     <thead>
@@ -58,7 +68,7 @@
     </thead>
     
     <tbody>
-      <tr ng-repeat="class in playerClasses | orderBy:sortType:sortReverse">
+      <tr ng-repeat="class in playerClasses | orderBy:sortType:sortReverse | filter:searchWeapon">
         <td>{{ class.name }}</td>
         <td>{{ class.weapon }}</td>
         <td>{{ class.damage }}</td>
