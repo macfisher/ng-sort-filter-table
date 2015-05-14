@@ -14,7 +14,7 @@ sortApp.controller('mainController', ['$scope', function($scope) {
 	$scope.searchWeapon = '';
 	
 	// create the list of player classes
-	$scope.playerClass = [
+	$scope.playerClasses = [
 		{ 
 			name: 'Thug', 
 			weapon: 'Shotgun', 
