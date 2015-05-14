@@ -32,19 +32,30 @@
     <thead>
       <tr>
         <td>
-            Class 
+			<!-- set the sortType in app.js to equal 'name' onClick -->
+			<a href="#" ng-click="sortType = 'name'; sortReverse = false">
+				Class 
+				<!-- show a carrot down symbol if the sortType is set to be 'name' -->
+				<span ng-show="sortType == 'name'" class="fa fa-caret-down"></span>
+            </a>
         </td>
         <td>
-          Weapon
+			<a href="#" ng-click="sortType = 'weapon'; sortReverse = false">
+				Weapon
+				<span ng-show="sortType == 'weapon'" class="fa fa-caret-down"></span>
+            </a>
         </td>
         <td>
-          Damage
+          <a href="#" ng-click="sortType = 'damage'; sortReverse = true">
+				Damage
+				<span ng-show="sortType == 'damage'" class="fa fa-caret-down"></span>
+            </a>
         </td>
       </tr>
     </thead>
     
     <tbody>
-      <tr ng-repeat="class in playerClasses">
+      <tr ng-repeat="class in playerClasses | orderBy:sortType:sortReverse">
         <td>{{ class.name }}</td>
         <td>{{ class.weapon }}</td>
         <td>{{ class.damage }}</td>

@@ -5,7 +5,7 @@ var sortApp = angular.module('sortApp', []);
 sortApp.controller('mainController', ['$scope', function($scope) {
 	
 	// set default sort type
-	$scope.sortType = 'name';
+	$scope.sortType = 'damage';
 	
 	// set default sort order
 	$scope.sortReverse = false;
