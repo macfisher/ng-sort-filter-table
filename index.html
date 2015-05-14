@@ -33,22 +33,25 @@
       <tr>
         <td>
 			<!-- set the sortType in app.js to equal 'name' onClick -->
-			<a href="#" ng-click="sortType = 'name'; sortReverse = false">
+			<a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
 				Class 
-				<!-- show a carrot down symbol if the sortType is set to be 'name' -->
-				<span ng-show="sortType == 'name'" class="fa fa-caret-down"></span>
+				<!-- show a carrot up or down symbol if reverseSort is set -->
+				<span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+				<span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
             </a>
         </td>
         <td>
-			<a href="#" ng-click="sortType = 'weapon'; sortReverse = false">
+			<a href="#" ng-click="sortType = 'weapon'; sortReverse = !sortReverse">
 				Weapon
-				<span ng-show="sortType == 'weapon'" class="fa fa-caret-down"></span>
+				<span ng-show="sortType == 'weapon' && !sortReverse" class="fa fa-caret-down"></span>
+				<span ng-show="sortType == 'weapon' && sortReverse" class="fa fa-caret-up"></span>
             </a>
         </td>
         <td>
-          <a href="#" ng-click="sortType = 'damage'; sortReverse = true">
+          <a href="#" ng-click="sortType = 'damage'; sortReverse = !sortReverse">
 				Damage
-				<span ng-show="sortType == 'damage'" class="fa fa-caret-down"></span>
+				<span ng-show="sortType == 'damage' && !sortReverse" class="fa fa-caret-down"></span>
+				<span ng-show="sortType == 'damage' && sortReverse" class="fa fa-caret-up"></span>
             </a>
         </td>
       </tr>
